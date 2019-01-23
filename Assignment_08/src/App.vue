@@ -8,12 +8,14 @@
                 <button class="btn btn-danger">Load Red Template</button>
                 <hr>
                 <app-blue>
-                    <template slot="blue">
                         <h1 >{{ contentText }}</h1>
-                    </template>
                 </app-blue>
-                <app-green></app-green>
-                <app-red></app-red>
+                <app-green>
+                    <h1 >{{ contentText }}</h1>
+                </app-green>
+                <app-red>
+                    <h1 >{{ contentText }}</h1>
+                </app-red>
             </div>
         </div>
     </div>
