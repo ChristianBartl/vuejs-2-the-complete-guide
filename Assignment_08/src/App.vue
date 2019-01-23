@@ -3,11 +3,14 @@
         <div class="row">
             <div class="col-xs-12">
                 <br>
-                <button class="btn btn-primary">Load Blue Template</button>
-                <button class="btn btn-success">Load Green Template</button>
-                <button class="btn btn-danger">Load Red Template</button>
+                <button class="btn btn-primary" @click="selectedComponent = 'appBlue'">Load Blue Template</button>
+                <button class="btn btn-success" @click="selectedComponent = 'appGreen'">Load Green Template</button>
+                <button class="btn btn-danger" @click="selectedComponent = 'appRed'">Load Red Template</button>
                 <hr>
-                <app-blue>
+                <component :is="selectedComponent">
+                    <p>{{ contentText }}</p>
+                </component>
+                <!-- <app-blue>
                         <h1 >{{ contentText }}</h1>
                 </app-blue>
                 <app-green>
@@ -15,7 +18,7 @@
                 </app-green>
                 <app-red>
                     <h1 >{{ contentText }}</h1>
-                </app-red>
+                </app-red> -->
             </div>
         </div>
     </div>
@@ -29,7 +32,8 @@
     export default {
         data: function() {
             return {
-                contentText: "CONTENT"
+                contentText: "CONTENT",
+                selectedComponent: "appBlue"
             };
         },
         components: {
