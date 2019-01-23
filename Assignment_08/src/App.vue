@@ -7,7 +7,11 @@
                 <button class="btn btn-success">Load Green Template</button>
                 <button class="btn btn-danger">Load Red Template</button>
                 <hr>
-                <app-blue></app-blue>
+                <app-blue>
+                    <template slot="blue">
+                        <h1 >{{ contentText }}</h1>
+                    </template>
+                </app-blue>
                 <app-green></app-green>
                 <app-red></app-red>
             </div>
@@ -21,6 +25,11 @@
     import Red from './components/Red.vue';
 
     export default {
+        data: function() {
+            return {
+                contentText: "CONTENT"
+            };
+        },
         components: {
             appBlue: Blue,
             appGreen: Green,
