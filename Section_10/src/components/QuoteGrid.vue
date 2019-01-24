@@ -1,6 +1,8 @@
 <template>
     <div class="row">
-        <app-quote v-for="quote in quotes">
+        <app-quote
+            v-for="(quote, index) in quotes"
+            v-bind:key="index">
             {{ quote }}
         </app-quote>
     </div>
